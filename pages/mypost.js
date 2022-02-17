@@ -1,8 +1,9 @@
+
 import { useContext, useEffect,useState } from 'react'
 import AuthContext from '../stores/authcontext'
 import styles from '../styles/Guides.module.css'
 
-export default function Guides() {
+export default function MyPost() {
 
   const {user,authReady,login} = useContext(AuthContext)
   const [guides, setGuides] = useState(null)
