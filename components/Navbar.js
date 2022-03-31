@@ -8,15 +8,19 @@ export default function Navbar() {
   const {user,login,logout} = useContext(AuthContext)
 
 
+
   return (
     <div className="container">
       <nav>
         <Image src="/rupee.png" width={50} height={48} />
-        <h1>Itum 80 blogger</h1>
+        <h1>Trust Signal</h1>
         <ul>
           <li><Link href="/"><a>Home</a></Link></li>
-          <li><Link href="/posts"><a>Posts</a></Link></li>
-          <li><Link href="/mypost"><a>MyPost</a></Link></li>
+          <li><Link href="/"><a>About Us</a></Link></li>
+          <li><Link href="/"><a>Performance</a></Link></li>
+          <li><Link href="/"><a>Courses</a></Link></li>
+          <li><Link href="/"><a>Blog</a></Link></li>
+          <li><Link href="/"><a>Contact Us</a></Link></li>
           {!user && <li onClick={login} className="btn">Login/Signup</li>}
           {user && <li>{user.email}</li>}
           {user && <li onClick={logout} className="btn">Logout</li>}
