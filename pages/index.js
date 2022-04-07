@@ -1,11 +1,38 @@
-import styles from '../styles/Home.module.css'
+import { useEffect } from "react/cjs/react.development"
 
 export default function Home() {
+
+
+
+  useEffect(() => {
+    const carousel = () => {
+      var i;
+      var x = document.getElementsByClassName("mySlides");
+      for (i = 0; i < x.length; i++) {
+        x[i].style.display = "none";
+      }
+      myIndex++;
+      if (myIndex > x.length) { myIndex = 1 }
+      x[myIndex - 1].style.display = "block";
+      setTimeout(carousel, 2000); // Change image every 2 seconds
+    }
+    var myIndex = 0;
+    carousel();
+  }, [])
   return (
-    <div className={styles.home}>
-       <h2>Welcome to Our Blog</h2>
-      <div>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti rem aspernatur odit hic autem neque repellat alias? Debitis veniam inventore ipsum similique quos animi ipsa asperiores fuga dolor id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti rem aspernatur odit hic autem neque repellat alias? Debitis veniam inventore ipsum similique quos animi ipsa asperiores fuga dolor id. Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis deleniti rem aspernatur odit hic autem neque repellat alias? Debitis veniam inventore ipsum similique quos animi ipsa asperiores fuga dolor id.</p>
+    <div className="w3-content w3-section">
+      <div className="w3-display-container w3-text-white">
+        <img className="mySlides w3-image" src="https://www.w3schools.com/w3css/img_la.jpg" />
+        {/* <div className="w3-display-middle w3-large">img_la</div> */}
+      </div>
+      <div className="w3-display-container w3-text-white">
+        <img className="mySlides w3-image" src="https://www.w3schools.com/w3css/img_ny.jpg" />
+        {/* <div className="w3-display-middle w3-large">img_ny</div> */}
+
+      </div>
+      <div className="w3-display-container w3-text-white">
+        <img className="mySlides w3-image" src="https://www.w3schools.com/w3css/img_chicago.jpg" />
+        {/* <div className="w3-display-middle w3-large">img_chicago</div> */}
       </div>
     </div>
   )

@@ -41,7 +41,7 @@ export default function MyPost() {
 
       {error && (
         <div className={styles.error}>
-          <p>{ error }</p>
+          <p className="w3-panel w3-red">{ error }</p>
         </div>
       )}
 
