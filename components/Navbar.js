@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Head from 'next/head'
 import { useContext } from 'react'
 import AuthContext from '../stores/authcontext'
-import reactDom from 'react-dom'
 export default function Navbar() {
 
   const { user, login, logout } = useContext(AuthContext)
@@ -33,7 +32,7 @@ export default function Navbar() {
         </nav>
         <div className="w3-hide-large">
           <button className="w3-button w3-xlarge" onClick={
-            ()=>{
+            () => {
               console.log(
                 document.getElementById('mySidebar').style.display = 'block'
               )
@@ -42,14 +41,14 @@ export default function Navbar() {
         </div>
         <div className="w3-sidebar w3-bar-block w3-border-right w3-hide-large" style={{ display: 'none' }} id="mySidebar">
           <ul>
-            <button className="w3-bar-item w3-large w3-red" onClick={()=>{
-                document.getElementById('mySidebar').style.display = 'none'
-            }}>Close &times;</button>
-            {user && <li>{user.email}</li>}
-            <a href="/" className="w3-bar-item w3-button">Home</a>
-            <a href="#" className="w3-bar-item w3-button">Link 2</a>
-            <a href="#" className="w3-bar-item w3-button">Link 3</a>
+            <li><Link href="/"><a>Home</a></Link></li>
+            <li><Link href="/"><a>About Us</a></Link></li>
+            <li><Link href="/"><a>Performance</a></Link></li>
+            <li><Link href="/"><a>Courses</a></Link></li>
+            <li><Link href="/"><a>Blog</a></Link></li>
+            <li><Link href="/"><a>Contact Us</a></Link></li>
             {!user && <li onClick={login} className="btn">Login/Signup</li>}
+            {user && <li>{user.email}</li>}
             {user && <li onClick={logout} className="btn">Logout</li>}
           </ul>
         </div>
