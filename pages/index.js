@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-
+import Head from "next/head";
 export default function Home() {
   let myIndex = 0;
   useEffect(() => {
@@ -15,14 +15,34 @@ export default function Home() {
       setTimeout(carousel, 2000); // Change image every 2 seconds
     }
     carousel();
-  },[myIndex])
-  return (
-    
-    <div className="w3-content w3-section">
-      <img className="mySlides w3-image" src="/img_la.jpg" alt="img_la" style={{}}/>
-      <img className="mySlides w3-image" src="/img_ny.jpg" alt="img_ny" style={{}}/>
-      <img className="mySlides w3-image" src="/img_chicago.jpg" alt="img_chicago" style={{}}/>
+  }, [])
 
-    </div>
+  return (
+
+    <>
+      <Head>
+        <title>Home</title>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+      </Head>
+      <div className="w3-content w3-section">
+        <img className="mySlides w3-image" src="/img_la.jpg" alt="img_la" style={{}} />
+        <img className="mySlides w3-image" src="/img_ny.jpg" alt="img_ny" style={{}} />
+        <img className="mySlides w3-image" src="/img_chicago.jpg" alt="img_chicago" style={{}} />
+        <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+        molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+        numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+        optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+        obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+        nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+        tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+        quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos 
+        sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+        recusandae alias error harum maxime adipisci amet laborum. Perspiciatis 
+        minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit 
+        </p>
+      </div>
+ 
+    </>
   )
 }

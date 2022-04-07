@@ -18,7 +18,7 @@ export default function Navbar() {
         <nav className="w3-hide-small">
           <Image src="/rupee.png" width={50} height={48} />
           <h1>Trust Signal</h1>
-          <ul>
+          <ul >
             <li><Link href="/"><a>Home</a></Link></li>
             <li><Link href="/aboutus"><a>About Us</a></Link></li>
             <li><Link href="/performance"><a>Performance</a></Link></li>
@@ -38,9 +38,10 @@ export default function Navbar() {
               )
             }
           }>☰</button>
+          <span className="w3-large w3-wide">Hello Forex Traders</span>
         </div>
         <div className="w3-sidebar w3-bar-block w3-border-right w3-hide-large" style={{ display: 'none' }} id="mySidebar">
-          <ul>
+          <ul className="w3-ul w3-border" >
             <button className="w3-bar-item w3-large w3-red" onClick={() => {
               document.getElementById('mySidebar').style.display = 'none'
             }}>Close &times;</button>
