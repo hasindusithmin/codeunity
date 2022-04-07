@@ -22,7 +22,7 @@ export default function Navbar() {
             <li><Link href="/"><a>Home</a></Link></li>
             <li><Link href="/"><a>About Us</a></Link></li>
             <li><Link href="/"><a>Performance</a></Link></li>
-            <li><Link href="/"><a>Courses</a></Link></li>
+            <li><Link href="/"><a>Plans</a></Link></li>
             <li><Link href="/"><a>Blog</a></Link></li>
             <li><Link href="/"><a>Contact Us</a></Link></li>
             {!user && <li onClick={login} className="btn">Login/Signup</li>}
@@ -47,7 +47,7 @@ export default function Navbar() {
             <li><Link href="/"><a>Home</a></Link></li>
             <li><Link href="/"><a>About Us</a></Link></li>
             <li><Link href="/"><a>Performance</a></Link></li>
-            <li><Link href="/"><a>Courses</a></Link></li>
+            <li><Link href="/"><a>Plans</a></Link></li>
             <li><Link href="/"><a>Blog</a></Link></li>
             <li><Link href="/"><a>Contact Us</a></Link></li>
             {!user && <li onClick={login} className="btn">Login/Signup</li>}
