@@ -45,12 +45,24 @@ export default function Navbar() {
             <button className="w3-bar-item w3-large w3-red" onClick={() => {
               document.getElementById('mySidebar').style.display = 'none'
             }}>Close &times;</button>
-            <li><Link href="/"><a>Home</a></Link></li>
-            <li><Link href="/aboutus"><a>About Us</a></Link></li>
-            <li><Link href="/performance"><a>Performance</a></Link></li>
-            <li><Link href="/plans"><a>Plans</a></Link></li>
-            <li><Link href="/blog"><a>Blog</a></Link></li>
-            <li><Link href="/contactus"><a>Contact Us</a></Link></li>
+            <li><Link href="/"><a onClick={() => {
+              document.getElementById('mySidebar').style.display = 'none'
+            }}>Home</a></Link></li>
+            <li><Link href="/aboutus" ><a onClick={() => {
+              document.getElementById('mySidebar').style.display = 'none'
+            }}>About Us</a></Link></li>
+            <li><Link href="/performance"><a onClick={() => {
+              document.getElementById('mySidebar').style.display = 'none'
+            }}>Performance</a></Link></li>
+            <li><Link href="/plans"><a onClick={() => {
+              document.getElementById('mySidebar').style.display = 'none'
+            }}>Plans</a></Link></li>
+            <li><Link href="/blog"><a onClick={() => {
+              document.getElementById('mySidebar').style.display = 'none'
+            }}>Blog</a></Link></li>
+            <li><Link href="/contactus"><a onClick={() => {
+              document.getElementById('mySidebar').style.display = 'none'
+            }}>Contact Us</a></Link></li>
             {!user && <li onClick={login} className="btn">Login/Signup</li>}
             {user && <li>{user.email}</li>}
             {user && <li onClick={logout} className="btn">Logout</li>}
