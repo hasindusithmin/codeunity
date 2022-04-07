@@ -22,16 +22,16 @@ export default function Home() {
   return (
     <div className="w3-content w3-section">
       <div className="w3-display-container w3-text-white">
-        <img className="mySlides w3-image" src="/img_la.jpg" />
+        <img className="mySlides w3-image" src="/img_la.jpg" alt="img_la"/>
         {/* <div className="w3-display-middle w3-large">img_la</div> */}
       </div>
       <div className="w3-display-container w3-text-white">
-        <img className="mySlides w3-image" src="/img_ny.jpg" />
+        <img className="mySlides w3-image" src="/img_ny.jpg" alt="img_ny"/>
         {/* <div className="w3-display-middle w3-large">img_ny</div> */}
 
       </div>
       <div className="w3-display-container w3-text-white">
-        <img className="mySlides w3-image" src="/img_chicago.jpg" />
+        <img className="mySlides w3-image" src="/img_chicago.jpg" alt="img_chicago"/>
         {/* <div className="w3-display-middle w3-large">img_chicago</div> */}
       </div>
     </div>
