@@ -20,11 +20,11 @@ export default function Navbar() {
           <h1>Trust Signal</h1>
           <ul>
             <li><Link href="/"><a>Home</a></Link></li>
-            <li><Link href="/"><a>About Us</a></Link></li>
-            <li><Link href="/"><a>Performance</a></Link></li>
-            <li><Link href="/"><a>Plans</a></Link></li>
-            <li><Link href="/"><a>Blog</a></Link></li>
-            <li><Link href="/"><a>Contact Us</a></Link></li>
+            <li><Link href="/aboutus"><a>About Us</a></Link></li>
+            <li><Link href="/performance"><a>Performance</a></Link></li>
+            <li><Link href="/plans"><a>Plans</a></Link></li>
+            <li><Link href="/blog"><a>Blog</a></Link></li>
+            <li><Link href="/contactus"><a>Contact Us</a></Link></li>
             {!user && <li onClick={login} className="btn">Login/Signup</li>}
             {user && <li>{user.email}</li>}
             {user && <li onClick={logout} className="btn">Logout</li>}
@@ -32,7 +32,7 @@ export default function Navbar() {
         </nav>
         <div className="w3-hide-large">
           <button className="w3-button w3-xlarge" onClick={
-            ()=>{
+            () => {
               console.log(
                 document.getElementById('mySidebar').style.display = 'block'
               )
@@ -41,15 +41,15 @@ export default function Navbar() {
         </div>
         <div className="w3-sidebar w3-bar-block w3-border-right w3-hide-large" style={{ display: 'none' }} id="mySidebar">
           <ul>
-            <button className="w3-bar-item w3-large w3-red" onClick={()=>{
-                document.getElementById('mySidebar').style.display = 'none'
+            <button className="w3-bar-item w3-large w3-red" onClick={() => {
+              document.getElementById('mySidebar').style.display = 'none'
             }}>Close &times;</button>
             <li><Link href="/"><a>Home</a></Link></li>
-            <li><Link href="/"><a>About Us</a></Link></li>
-            <li><Link href="/"><a>Performance</a></Link></li>
-            <li><Link href="/"><a>Plans</a></Link></li>
-            <li><Link href="/"><a>Blog</a></Link></li>
-            <li><Link href="/"><a>Contact Us</a></Link></li>
+            <li><Link href="/aboutus"><a>About Us</a></Link></li>
+            <li><Link href="/performance"><a>Performance</a></Link></li>
+            <li><Link href="/plans"><a>Plans</a></Link></li>
+            <li><Link href="/blog"><a>Blog</a></Link></li>
+            <li><Link href="/contactus"><a>Contact Us</a></Link></li>
             {!user && <li onClick={login} className="btn">Login/Signup</li>}
             {user && <li>{user.email}</li>}
             {user && <li onClick={logout} className="btn">Logout</li>}
