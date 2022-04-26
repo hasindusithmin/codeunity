@@ -16,10 +16,10 @@ export default function Navbar() {
       </Head>
       <div className="container">
         <nav className="w3-hide-small">
-          <Image src="/rupee.png" width={50} height={48} />
-          <h1>Trust Signal</h1>
+          <Image src="/unity.png" width={50} height={48} />
+          <h1>Code Unity</h1>
           <ul >
-            <li><Link href="/"><a>Home</a></Link></li>
+            <li className='w3-btn w3-round'><Link href="/"><a>Home</a></Link></li>
             <li><Link href="/aboutus"><a>About Us</a></Link></li>
             <li><Link href="/performance"><a>Performance</a></Link></li>
             <li><Link href="/plans"><a>Plans</a></Link></li>
