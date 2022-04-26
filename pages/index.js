@@ -12,7 +12,7 @@ export default function Home() {
       myIndex++;
       if (myIndex > x.length) { myIndex = 1 }
       x[myIndex - 1].style.display = "block";
-      setTimeout(carousel, 2000); // Change image every 2 seconds
+      setTimeout(carousel, 3500); // Change image every 2 seconds
     }
     carousel();
   }, [])
@@ -25,9 +25,9 @@ export default function Home() {
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
       </Head>
       <div className="w3-content w3-section">
-        <img className="mySlides w3-image" src="/img_la.jpg" alt="img_la" style={{}} />
-        <img className="mySlides w3-image" src="/img_ny.jpg" alt="img_ny" style={{}} />
-        <img className="mySlides w3-image" src="/img_chicago.jpg" alt="img_chicago" style={{}} />
+        <img className="mySlides w3-image" src="/uno.jpg" alt="img_la" style={{}} />
+        <img className="mySlides w3-image" src="/due.jpg" alt="img_ny" style={{}} />
+        <img className="mySlides w3-image" src="/tre.jpg" alt="img_chicago" style={{}} />
         <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
