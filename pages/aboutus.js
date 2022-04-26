@@ -1,9 +1,10 @@
 
+import Image from "next/image"
 
-export default function AboutUs(){
+export default function AboutUs() {
     return (
-        <div className="w3-panel w3-blue w3-round-xxlarge w3-border">
-            <h3>Under Contruction!</h3>
+        <div className="w3-content w3-section">
+            <Image src="/contruct.png" width={960} height={500} />
         </div>
     )
 }

@@ -14,19 +14,36 @@ export default function Navbar() {
       <Head>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
       </Head>
+
       <div className="container">
+
+        <div className='w3-row w3-panel'>
+          <h1 className='w3-wide w3-center w3-threequarter w3-cursive'>
+            <b>Unity Trade Plus</b>
+          </h1>
+          <h1 className='w3-quarter'>
+            <img
+              src="https://www.w3schools.com/w3css/img_avatar3.png"
+              alt="Avatar"
+              className="w3-left w3-circle w3-margin-right"
+              width={50}
+              height={48}
+              onClick={() => {
+                location.href = '/account'
+              }} />
+            <div className='w3-small'>hasindu sithmin hasindusithmin@yahoo.com</div>
+          </h1>
+        </div>
         <nav className="w3-hide-small">
           <Image src="/unity.png" width={50} height={48} />
           <h1>Code Unity</h1>
           <ul >
             <li className='w3-btn w3-round'><Link href="/"><a>Home</a></Link></li>
-            <li><Link href="/aboutus"><a>About Us</a></Link></li>
-            <li><Link href="/performance"><a>Performance</a></Link></li>
-            <li><Link href="/plans"><a>Plans</a></Link></li>
-            <li><Link href="/blog"><a>Blog</a></Link></li>
-            <li><Link href="/contactus"><a>Contact Us</a></Link></li>
-            {!user && <li onClick={login} className="btn">Login/Signup</li>}
-            {user && <li>{user.email}</li>}
+            <li className='w3-btn w3-round'><Link href="/aboutus"><a>About Us</a></Link></li>
+            <li className='w3-btn w3-round'><Link href="/performance"><a>Performance</a></Link></li>
+            <li className='w3-btn w3-round'><Link href="/contactus"><a>Contact Us</a></Link></li>
+            {!user && <li onClick={login} className="btn" style={{ marginLeft: '5px' }}>Login/Signup</li>}
+            {/* {user && <li>{user.email}</li>} */}
             {user && <li onClick={logout} className="btn">Logout</li>}
           </ul>
         </nav>

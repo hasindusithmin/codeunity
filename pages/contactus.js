@@ -1,8 +1,9 @@
+import Image from "next/image"
 
-export default function ContactUs(){
+export default function ContactUs() {
     return (
-        <div className="w3-panel w3-yellow w3-round-xxlarge w3-border">
-            <h3>Under Contruction!</h3>
+        <div className="w3-content w3-section">
+            <Image src="/contruct.png" width={960} height={500} />
         </div>
     )
 }
