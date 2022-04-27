@@ -6,6 +6,7 @@ import GetInfo from "../domfunc/GetInfo";
 import News from "../domfunc/News";
 import Ma from "../domfunc/Ma";
 import Pivot from "../domfunc/Pivot";
+import Ti from "../domfunc/Ti";
 // ###############################
 export default function Account() {
   const { user, login, logout } = useContext(AuthContext);
@@ -112,7 +113,7 @@ export default function Account() {
                   aria-hidden="true"
                 ></i>
               </li>
-              <li>
+              <li onClick={()=>{Ti()}}>
                 Technical Indicators{" "}
                 <i
                   className="fa fa-angle-right w3-right"
