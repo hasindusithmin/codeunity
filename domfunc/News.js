@@ -17,11 +17,11 @@ export default function News(){
     submit.innerHTML = 'GetNews';
     submit.className = "w3-btn w3-block";
     submit.onclick = async()=>{
-        submit.innerHTML = 'GetInfo&nbsp;<i class="fa fa-spinner w3-spin"></i>';
+        submit.innerHTML = 'GetNews&nbsp;<i class="fa fa-spinner w3-spin"></i>';
         const currency_pair = document.getElementById('select_getinfo').value.trim();
         const res = await fetch(`https://forex-codeunity.herokuapp.com/yahoo/news/${currency_pair}`)
         if (res.status === 200) {
-            submit.innerHTML = 'GetInfo';
+            submit.innerHTML = 'GetNews';
             const data = await res.json();
             for (let dt of data) {
                 const {type,publisher,providerPublishTime,title,link} = dt;
