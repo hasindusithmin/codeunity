@@ -5,6 +5,7 @@ import Head from "next/head";
 import GetInfo from "../domfunc/GetInfo";
 import News from "../domfunc/News";
 import Ma from "../domfunc/Ma";
+import Pivot from "../domfunc/Pivot";
 // ###############################
 export default function Account() {
   const { user, login, logout } = useContext(AuthContext);
@@ -104,7 +105,7 @@ export default function Account() {
                   aria-hidden="true"
                 ></i>
               </li>
-              <li>
+              <li onClick={()=>{Pivot()}}>
                 Pivot Points{" "}
                 <i
                   className="fa fa-angle-right w3-right"

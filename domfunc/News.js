@@ -17,6 +17,8 @@ export default function News(){
     submit.innerHTML = 'GetNews';
     submit.className = "w3-btn w3-block";
     submit.onclick = async()=>{
+        const widgets = document.querySelectorAll('div [title=widget]');
+        if (widgets) for (let widget of widgets) widget.remove();
         submit.innerHTML = 'GetNews&nbsp;<i class="fa fa-spinner w3-spin"></i>';
         const currency_pair = document.getElementById('select_getinfo').value.trim();
         const res = await fetch(`https://forex-codeunity.herokuapp.com/yahoo/news/${currency_pair}`)
@@ -27,8 +29,9 @@ export default function News(){
                 const {type,publisher,providerPublishTime,title,link} = dt;
                 const div = document.createElement('div');
                 div.className = 'w3-card-4 test w3-margin-top';
+                div.title = 'widget';
                 const txt = `<header class="w3-container w3-light-grey">
-                  <h3 class="w3-wide">${type}</h3>
+                  <h3 class="w3-wide">${type}&nbsp;&nbsp;<span class="w3-tag w3-small">${currency_pair}</span></h3>
                 </header>
                 <div class="w3-container">
                   <p><b>${publisher}</b> <span class="w3-tag w3-round w3-grey w3-border w3-border-white">${new Date(providerPublishTime).toLocaleString()}</span></p>
