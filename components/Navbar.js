@@ -34,7 +34,7 @@ export default function Navbar() {
         </div>
         <nav className="w3-hide-small">
           <Image src="/unity.png" width={60} height={58} />
-          <h1>Code Unity</h1>
+          <h1 className='w3-cursive'>Code Unity</h1>
           <ul >
             <li className='w3-btn w3-round'><Link href="/"><a>Home</a></Link></li>
             <li className='w3-btn w3-round'><Link href="/aboutus"><a>About Us</a></Link></li>
