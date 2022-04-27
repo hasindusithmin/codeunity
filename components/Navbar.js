@@ -7,8 +7,6 @@ export default function Navbar() {
 
   const { user, login, logout } = useContext(AuthContext)
 
-
-
   return (
     <>
       <Head>
@@ -31,20 +29,20 @@ export default function Navbar() {
               onClick={() => {
                 location.href = '/account'
               }} />
-            <div className='w3-small'>hasindu sithmin hasindusithmin@yahoo.com</div>
+            <div className='w3-small w3-rigth'>{user && <p>{user.user_metadata.full_name}</p>}</div>
           </h1>
         </div>
         <nav className="w3-hide-small">
-          <Image src="/unity.png" width={50} height={48} />
+          <Image src="/unity.png" width={60} height={58} />
           <h1>Code Unity</h1>
           <ul >
             <li className='w3-btn w3-round'><Link href="/"><a>Home</a></Link></li>
             <li className='w3-btn w3-round'><Link href="/aboutus"><a>About Us</a></Link></li>
             <li className='w3-btn w3-round'><Link href="/performance"><a>Performance</a></Link></li>
             <li className='w3-btn w3-round'><Link href="/contactus"><a>Contact Us</a></Link></li>
+            {user && <li className='w3-btn w3-round'><Link href="/account"><a>Account</a></Link></li>}
             {!user && <li onClick={login} className="btn" style={{ marginLeft: '5px' }}>Login/Signup</li>}
-            {/* {user && <li>{user.email}</li>} */}
-            {user && <li onClick={logout} className="btn">Logout</li>}
+            {user && <li onClick={logout} className="btn" style={{ marginLeft: '5px' }}>Logout</li>}
           </ul>
         </nav>
         <div className="w3-hide-large">

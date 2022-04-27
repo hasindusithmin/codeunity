@@ -3,18 +3,18 @@ import Head from "next/head";
 export default function Home() {
   let myIndex = 0;
   useEffect(() => {
-    const carousel = () => {
-      let i;
-      let x = document.getElementsByClassName("mySlides");
-      for (i = 0; i < x.length; i++) {
-        x[i].style.display = "none";
-      }
-      myIndex++;
-      if (myIndex > x.length) { myIndex = 1 }
-      x[myIndex - 1].style.display = "block";
-      setTimeout(carousel, 3500); // Change image every 2 seconds
-    }
-    carousel();
+    // const carousel = () => {
+    //   let i;
+    //   let x = document.getElementsByClassName("mySlides");
+    //   for (i = 0; i < x.length; i++) {
+    //     x[i].style.display = "none";
+    //   }
+    //   myIndex++;
+    //   if (myIndex > x.length) { myIndex = 1 }
+    //   x[myIndex - 1].style.display = "block";
+    //   setTimeout(carousel, 3500); // Change image every 2 seconds
+    // }
+    // carousel();
   }, [])
 
   return (
@@ -26,8 +26,8 @@ export default function Home() {
       </Head>
       <div className="w3-content w3-section">
         <img className="mySlides w3-image" src="/uno.jpg" alt="img_la" style={{}} />
-        <img className="mySlides w3-image" src="/due.jpg" alt="img_ny" style={{}} />
-        <img className="mySlides w3-image" src="/tre.jpg" alt="img_chicago" style={{}} />
+        {/* <img className="mySlides w3-image" src="/due.jpg" alt="img_ny" style={{}} />
+        <img className="mySlides w3-image" src="/tre.jpg" alt="img_chicago" style={{}} /> */}
         <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
         molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
