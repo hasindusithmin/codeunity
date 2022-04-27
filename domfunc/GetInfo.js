@@ -2,6 +2,8 @@
 export default function GetInfo(){
     const panel = document.getElementById('panel');
     panel.innerHTML = null;
+    panel.style.maxHeight = '700px';
+    panel.style.overflow = 'scroll';
     const currencies = ['eurusd','usdjpy', 'gbpusd', 'audusd', 'nzdusd', 'eurjpy', 'gbpjpy', 'eurgbp', 'eurcad', 'eursek', 'eurchf', 'eurhuf', 'eurjpy', 'usdcny', 'usdhkd', 'usdsgd', 'usdinr', 'usdmxn', 'usdphp', 'usdidr', 'usdthb', 'usdmyr', 'usdzar', 'usdrub']
     const select = document.createElement('select');
     select.className = 'w3-input w3-round';

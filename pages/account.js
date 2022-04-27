@@ -7,6 +7,7 @@ import News from "../domfunc/News";
 import Ma from "../domfunc/Ma";
 import Pivot from "../domfunc/Pivot";
 import Ti from "../domfunc/Ti";
+import Ec from "../domfunc/Ec";
 // ###############################
 export default function Account() {
   const { user, login, logout } = useContext(AuthContext);
@@ -120,7 +121,7 @@ export default function Account() {
                   aria-hidden="true"
                 ></i>
               </li>
-              <li>
+              <li onClick={()=>{Ec()}}>
                 Economic Calender{" "}
                 <i
                   className="fa fa-angle-right w3-right"
@@ -171,7 +172,7 @@ export default function Account() {
           <br />
         </div>
         {/* 1/3 end and 2/3 start */}
-        <div className="w3-twothird w3-padding" id="panel" style={{maxHeight:'700px',overflow:'scroll'}}></div>
+        <div className="w3-twothird w3-padding" id="panel"></div>
         {/* 2/3 end */}
       </div>
     </>

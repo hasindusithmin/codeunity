@@ -2,6 +2,8 @@
 export default function Pivot(){
     const panel = document.getElementById('panel');
     panel.innerHTML = null;
+    panel.style.maxHeight = '700px';
+    panel.style.overflow = 'scroll';
     const currencies = ['eurusd','usdjpy', 'gbpusd', 'audusd', 'nzdusd', 'eurjpy', 'gbpjpy', 'eurgbp', 'eurcad', 'eursek', 'eurchf', 'eurhuf', 'eurjpy', 'usdcny', 'usdhkd', 'usdsgd', 'usdinr', 'usdmxn', 'usdphp', 'usdidr', 'usdthb', 'usdmyr', 'usdzar', 'usdrub']
     const timeframes = ['5mins', '15mins', '30mins','lhour'];
     const select1 = document.createElement('select');
