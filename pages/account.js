@@ -3,6 +3,7 @@ import { useContext, useRef } from "react";
 import AuthContext from "../stores/authcontext";
 import Head from "next/head";
 import GetInfo from "../domfunc/GetInfo";
+import News from "../domfunc/News";
 // ###############################
 export default function Account() {
   const { user, login, logout } = useContext(AuthContext);
@@ -30,6 +31,7 @@ export default function Account() {
   return (
     <>
       <Head>
+        <title>Account</title>
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -87,7 +89,7 @@ export default function Account() {
                   aria-hidden="true"
                 ></i>
               </li>
-              <li>
+              <li onClick={()=>{News()}}>
                 News{" "}
                 <i
                   className="fa fa-angle-right w3-right"
@@ -166,8 +168,7 @@ export default function Account() {
           <br />
         </div>
         {/* 1/3 end and 2/3 start */}
-        <div className="w3-twothird w3-padding" id="panel" style={{height:'700px',overflow:'scroll'}}>
-        </div>
+        <div className="w3-twothird w3-padding" id="panel" style={{maxHeight:'700px',overflow:'scroll'}}></div>
         {/* 2/3 end */}
       </div>
     </>
