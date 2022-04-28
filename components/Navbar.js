@@ -5,7 +5,13 @@ import { useContext } from "react";
 import AuthContext from "../stores/authcontext";
 export default function Navbar() {
   const { user, login, logout } = useContext(AuthContext);
-
+  function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
 
 
   return (
@@ -135,111 +141,63 @@ export default function Navbar() {
           </ul>
         </nav>
         <div className="w3-hide-large">
-          <button
-            className="w3-button w3-xlarge"
-            onClick={() => {
-              console.log(
-                (document.getElementById("mySidebar").style.display = "block")
-              );
-            }}
-          >
-            ☰
-          </button>
+          <div className="w3-button w3-padding-16 w3-left" onClick={w3_open}>☰</div>
           <span className="w3-large w3-wide">Hello Forex Traders</span>
         </div>
-        <div
-          className="w3-sidebar w3-bar-block w3-border-right w3-hide-large"
-          style={{ display: "none" }}
-          id="mySidebar"
-        >
-          <ul className="w3-ul w3-border">
-            <button
-              className="w3-bar-item w3-large w3-red"
-              onClick={() => {
-                document.getElementById("mySidebar").style.display = "none";
-              }}
-            >
-              Close &times;
-            </button>
-            <li>
-              <Link href="/">
-                <a
-                  onClick={() => {
-                    document.getElementById("mySidebar").style.display = "none";
-                  }}
-                >
-                  Home
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/aboutus">
-                <a
-                  onClick={() => {
-                    document.getElementById("mySidebar").style.display = "none";
-                  }}
-                >
-                  About Us
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/performance">
-                <a
-                  onClick={() => {
-                    document.getElementById("mySidebar").style.display = "none";
-                  }}
-                >
-                  Performance
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/plans">
-                <a
-                  onClick={() => {
-                    document.getElementById("mySidebar").style.display = "none";
-                  }}
-                >
-                  Plans
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/blog">
-                <a
-                  onClick={() => {
-                    document.getElementById("mySidebar").style.display = "none";
-                  }}
-                >
-                  Blog
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contactus">
-                <a
-                  onClick={() => {
-                    document.getElementById("mySidebar").style.display = "none";
-                  }}
-                >
-                  Contact Us
-                </a>
-              </Link>
-            </li>
-            {!user && (
-              <li onClick={login} className="btn">
-                Login/Signup
-              </li>
-            )}
-            {user && <li>{user.email}</li>}
-            {user && (
-              <li onClick={logout} className="btn">
-                Logout
-              </li>
-            )}
-          </ul>
+        <nav className="w3-sidebar w3-bar-block w3-card w3-top w3-animate-left w3-hide-large" style={{display:"none",zIndex:2,width:'40%',maxWidth:'300px'}} id="mySidebar">  
+        <div onClick={w3_close} className="w3-bar-item w3-button">Close Menu</div>
+        <div onClick={w3_close} className="w3-bar-item w3-button">
+          <Link href="/">
+                <a>Home</a>
+          </Link>
         </div>
+        <div onClick={w3_close} className="w3-bar-item w3-button">
+          <Link href="/aboutus">
+                <a>About Us</a>
+          </Link>
+        </div>
+        <div onClick={w3_close} className="w3-bar-item w3-button">
+          <Link href="/performance">
+                  <a>Performance</a>
+          </Link>
+        </div>
+        <div onClick={w3_close} className="w3-bar-item w3-button">
+          <Link href="/contactus">
+                  <a>Contact Us</a>
+          </Link>
+        </div>
+        {user && (
+              <>
+                <div onClick={w3_close} className="w3-bar-item w3-button">
+                <Link href="/trader">
+                      <a>Trader</a>
+                </Link>
+              </div>
+              <div onClick={w3_close} className="w3-bar-item w3-button">
+                <Link href="/advisor">
+                      <a>Advisor</a>
+                </Link>
+              </div>
+              </>
+        )}
+        {user && (
+              <div onClick={w3_close} className="w3-bar-item w3-button">
+                <Link href="/account">
+                  <a>Account</a>
+                </Link>
+              </div>
+            )}
+            {!user && (
+              <div onClick={login} className="w3-bar-item w3-button">
+                Login/Signup
+              </div>
+            )}
+            {user && (
+              <div onClick={logout} className="w3-bar-item w3-button">
+                Logout
+              </div>
+            )}
+      </nav>
       </div>
     </>
   );
