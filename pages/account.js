@@ -8,6 +8,7 @@ import Ma from "../domfunc/Ma";
 import Pivot from "../domfunc/Pivot";
 import Ti from "../domfunc/Ti";
 import Ec from "../domfunc/Ec";
+import Profile from "../domfunc/Profile";
 // ###############################
 export default function Account() {
   const { user, login, logout } = useContext(AuthContext);
@@ -130,7 +131,7 @@ export default function Account() {
               </li>
             </ul>
             <ul className="w3-ul w3-hide" ref={profile}>
-              <li>
+              <li onClick={()=>{Profile(user)}}>
                 Profile{" "}
                 <i
                   className="fa fa-angle-right w3-right"
