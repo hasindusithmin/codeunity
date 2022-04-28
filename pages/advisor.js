@@ -43,7 +43,7 @@ export default function Advisor() {
           </Link>
         </div>
       )}
-      {!notexist && (
+      {usr && (
           <div className="w3-content w3-section">
               <h3>welcome {usr.first_name} {usr.last_name}</h3>
               <button className="w3-btn w3-blue" onClick={()=>{sendMessage()}}>receive message</button>
