@@ -27,7 +27,7 @@ export default function Advisor() {
               if (data !== null) setNotExist(false);
             });
     }
-  }, [user]);
+  }, [user,usr]);
   return (
     <>
       {notexist && (
