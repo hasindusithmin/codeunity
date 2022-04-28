@@ -24,10 +24,10 @@ export default function Advisor() {
             .then((res) => res.json())
             .then((data) => {
               setUsr(data);
-              if (data != null) setNotExist(false);
+              if (data !== null) setNotExist(false);
             });
     }
-  }, [user,usr]);
+  }, [user]);
   return (
     <>
       {notexist && (
