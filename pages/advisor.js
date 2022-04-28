@@ -35,7 +35,7 @@ export default function Advisor() {
           <Link
             href={
               user
-                ? `https://hasindusithmin.github.io/telegram-login/#${user.id}`
+                ? `https://hasindusithmin.github.io/telegram-login/#${user.id}#advisor`
                 : "/"
             }
           >
