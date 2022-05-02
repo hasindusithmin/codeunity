@@ -16,7 +16,10 @@ export default function Home() {
       "locale": "en"
     });
     `
-    setTimeout(()=>{document.body.appendChild(script2)},1000)
+    setTimeout(() => { document.body.appendChild(script2) }, 1000)
+    const script3 = document.createElement('script')
+    script3.src = 'https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1'
+    document.body.append(script3)
   }, [])
   return (
 
@@ -29,11 +32,18 @@ export default function Home() {
         <div className="w3-row">
           <div className="w3-half">
             <img className="w3-image w3-center" src="/uno.jpg" alt="img_la" />
-            <iframe src="https://hasindusithmin.github.io/forex-chart/" width={500} height={250} style={{margin:'10px 0'}} scrolling="no" frameBorder={0}></iframe>
+            <iframe src="https://hasindusithmin.github.io/forex-chart/" width={500} height={250} style={{ margin: '10px 0' }} scrolling="no" frameBorder={0}></iframe>
+
           </div>
           <div className="w3-half">
             <div id="tv-chatwidget-f9499"></div>
           </div>
+          <df-messenger
+            intent="WELCOME"
+            chat-title="NewAgent"
+            agent-id="e7481f3a-59dc-4cd0-bc53-52e4acf83bae"
+            language-code="en"
+          ></df-messenger>
         </div>
       </div>
 
