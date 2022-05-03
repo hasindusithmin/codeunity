@@ -1,6 +1,7 @@
+
 import { useEffect } from "react"
 import Head from "next/head"
-export default function Ta() {
+export default function Fa() {
 
     useEffect(() => {
         const markets = ['FX:GBPUSD', 'FX:USDJPY', 'FX:AUDUSD', 'FX:EURUSD', 'FX:GBPJPY', 'FX:USDCAD', 'FX:EURJPY', 'FX:NZDUSD', 'FX:CADJPY', 'FX:GBPCHF']
@@ -13,10 +14,10 @@ export default function Ta() {
             div.className = 'tradingview-widget-container';
             div.innerHTML = '<div class="tradingview-widget-container__widget"></div>'
             const script = document.createElement('script');
-            script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js'
+            script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-financials.js'
             script.async = true;
             const height = navigator.userAgentData.mobile ? '250':'450'
-            script.innerText = `{ "interval": "1m", "width": "100%", "isTransparent": true, "height": ${height}, "symbol": "${market}", "showIntervalTabs": true, "locale": "en", "colorTheme": "light" }`
+            script.innerText = `{ "interval": "1m", "width": "100%", "isTransparent": true, "height": ${height}, "symbol": "${market}", "showIntervalTabs": true, "locale": "en", "colorTheme": "light", "displayMode": "adaptive" }`
             div.appendChild(script)
             root.appendChild(div)
             nodeList.push(root)
@@ -37,11 +38,12 @@ export default function Ta() {
     return (
         <>
             <Head>
-                <title>Technical Analysis</title>
+                <title>Fundamental Analysis</title>
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
             </Head>
             <div id="root" className="w3-content w3-section"></div>
 
         </>
     )
+
 }

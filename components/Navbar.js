@@ -84,9 +84,16 @@ export default function Navbar() {
               </li>
             )}
             {!user && (
-              <li className="w3-btn w3-round">
+              <li className="w3-btn w3-round" title="Technical Analysis">
                 <Link href="/ta">
                   <a>TA</a>
+                </Link>
+              </li>
+            )}
+            {!user && (
+              <li className="w3-btn w3-round" title="Fundamental Analysis">
+                <Link href="/fa">
+                  <a>FA</a>
                 </Link>
               </li>
             )}
