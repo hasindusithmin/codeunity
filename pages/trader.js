@@ -31,13 +31,9 @@ export default function Trader() {
             script.src = 'https://telegram.org/js/telegram-widget.js?19'
             script.setAttribute('data-telegram-login', 'codeunitybot')
             script.setAttribute('data-size', 'large')
-            script.setAttribute('data-onauth', 'onTelegramAuth(user)')
+            script.setAttribute('data-auth-url', 'https://codeunity.netlify.app/trader')
             script.setAttribute('data-request-access', 'write')
             document.getElementById('widget').appendChild(script)
-            const script_ = document.createElement('script')
-            script_.type = "text/javascript"
-            script_.innerText = `function onTelegramAuth(user) { const client = { "first_name":user.first_name, "last_name":user.last_name, "chat_id":user.id.toString(), "user_id":sessionStorage.getItem('uuid'), "role":"trader" } fetch('https://data.mongodb-api.com/app/application-0-nfogs/endpoint/adduser',{ method: 'POST', // *GET, POST, PUT, DELETE, etc. headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(client) // body data type must match "Content-Type" header }).then(res=>{})`
-            document.body.appendChild(script_)  
           }
             
         });
