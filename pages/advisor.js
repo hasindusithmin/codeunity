@@ -17,6 +17,29 @@ export default function Advisor() {
       }
   }
   useEffect(() => {
+    try {
+      const url = window.location.href;
+      const client = { "role": "advisor" }
+      const details = url.split('?')[1]
+      const queries = details.split('&')
+      for (let query of queries) {
+        const key = query.split('=')[0]
+        const value = query.split('=')[1]
+        client[key] = value;
+      }
+      fetch('https://data.mongodb-api.com/app/application-0-nfogs/endpoint/adduser', {
+        method: 'POST', // *GET, POST, PUT, DELETE, etc.
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(client) // body data type must match "Content-Type" header
+      }).then(res => {
+        if (res.status === 200) window.location.href = `https://codeunity.netlify.app/advisor`;
+      })
+    } catch (error) {
+      console.log({error:error.message});
+    }
+
     if (user) {
       sessionStorage.setItem('uuid',user.id);
       fetch(
