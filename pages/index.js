@@ -5,6 +5,7 @@ export default function Home() {
     const chatbot = document.createElement('script')
     chatbot.src = 'https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1'
     document.body.append(chatbot)
+    
   }, [])
   return (
 
