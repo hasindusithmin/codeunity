@@ -42,7 +42,7 @@ export default function Navbar() {
         </div>
         <div className="w3-row">
           <h1 className="w3-wide w3-center w3-threequarter w3-cursive">
-            <b>Unity Trade Plus</b>
+            <Link href="/"><b>Unity Trade Plus</b></Link>
           </h1>
           <h1 className="w3-quarter">
             <img
@@ -78,8 +78,8 @@ export default function Navbar() {
             )}
             {!user && (
               <li className="w3-btn w3-round">
-                <Link href="/performance">
-                  <a>Performance</a>
+                <Link href="/calendar">
+                  <a>Calendar</a>
                 </Link>
               </li>
             )}
