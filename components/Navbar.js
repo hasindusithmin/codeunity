@@ -202,6 +202,16 @@ export default function Navbar() {
               <a>TA</a>
             </Link>
           </div>
+          <div onClick={w3_close} className="w3-bar-item w3-button">
+            <Link href="/fa">
+              <a>FA</a>
+            </Link>
+          </div>
+          <div onClick={w3_close} className="w3-bar-item w3-button">
+            <Link href="/contactus">
+              <a>Contact Us</a>
+            </Link>
+          </div>
           {user && (
             <>
               <div onClick={w3_close} className="w3-bar-item w3-button">
