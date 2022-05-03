@@ -85,8 +85,8 @@ export default function Navbar() {
             )}
             {!user && (
               <li className="w3-btn w3-round">
-                <Link href="/contactus">
-                  <a>Contact Us</a>
+                <Link href="/ta">
+                  <a>TA</a>
                 </Link>
               </li>
             )}
@@ -169,13 +169,13 @@ export default function Navbar() {
             </Link>
           </div>
           <div onClick={w3_close} className="w3-bar-item w3-button">
-            <Link href="/performance">
-              <a>Performance</a>
+            <Link href="/calendar">
+              <a>Calendar</a>
             </Link>
           </div>
           <div onClick={w3_close} className="w3-bar-item w3-button">
-            <Link href="/contactus">
-              <a>Contact Us</a>
+            <Link href="/ta">
+              <a>TA</a>
             </Link>
           </div>
           {user && (
