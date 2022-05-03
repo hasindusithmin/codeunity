@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import { useContext,useEffect } from "react";
+import { useContext, useEffect } from "react";
 import AuthContext from "../stores/authcontext";
 export default function Navbar() {
   const { user, login, logout } = useContext(AuthContext);
@@ -13,13 +13,13 @@ export default function Navbar() {
     document.getElementById("mySidebar").style.display = "none";
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     const script = document.createElement('script')
     script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js'
     script.async = true;
     script.innerHTML = '{ "symbols": [ { "description": "GBP/USD", "proName": "FOREXCOM:GBPUSD" }, { "description": "USD/JPY", "proName": "OANDA:USDJPY" }, { "description": "AUD/USD", "proName": "FX:AUDUSD" }, { "description": "EUR/USD", "proName": "FOREXCOM:EURUSD" }, { "description": "GBP/JPY", "proName": "OANDA:GBPJPY" }, { "description": "USD/CAD", "proName": "FX:USDCAD" }, { "description": "EUR/JPY", "proName": "OANDA:EURJPY" }, { "description": "NZD/USD", "proName": "FX:NZDUSD" }, { "description": "CAD/JPY", "proName": "OANDA:CADJPY" }, { "description": "GBP/CHF", "proName": "FX:GBPCHF" } ], "showSymbolLogo": true, "colorTheme": "light", "isTransparent": true, "displayMode": "adaptive", "locale": "en" }'
     document.getElementById('tape').appendChild(script);
-  },[])
+  }, [])
 
   return (
     <>
@@ -97,6 +97,13 @@ export default function Navbar() {
                 </Link>
               </li>
             )}
+            {!user && (
+              <li className="w3-btn w3-round" title="Fundamental Analysis">
+                <Link href="/contactus">
+                  <a>Contact Us</a>
+                </Link>
+              </li>
+            )}
             {user && (
               <div className="w3-dropdown-hover">
                 <button className="w3-button">Plans&nbsp;<i className="fa fa-angle-down" aria-hidden="true"></i></button>
@@ -116,16 +123,26 @@ export default function Navbar() {
             )}
             {user && (
               <div className="w3-dropdown-hover">
-                <button className="w3-button">Menu&nbsp;<i className="fa fa-angle-down" aria-hidden="true"></i></button>
+                <button className="w3-button">Widgets&nbsp;<i className="fa fa-angle-down" aria-hidden="true"></i></button>
                 <div className="w3-dropdown-content w3-bar-block w3-border">
                   <div className="w3-bar-item w3-button">
-                    <Link href="/aboutus">
-                      <a>About Us</a>
+                    <Link href="/chart">
+                      <a>Chart</a>
                     </Link>
                   </div>
                   <div className="w3-bar-item w3-button">
-                    <Link href="/performance">
-                      <a>Performance</a>
+                    <Link href="/calendar">
+                      <a>Calendar</a>
+                    </Link>
+                  </div>
+                  <div className="w3-bar-item w3-button">
+                    <Link href="/ta">
+                      <a>TA</a>
+                    </Link>
+                  </div>
+                  <div className="w3-bar-item w3-button">
+                    <Link href="/fa">
+                      <a>FA</a>
                     </Link>
                   </div>
                   <div className="w3-bar-item w3-button">
