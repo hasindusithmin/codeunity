@@ -6,12 +6,9 @@ export default function Home() {
     script_tv.src = "https://s3.tradingview.com/tv.js";
     script_tv.async = true;
     document.body.appendChild(script_tv)
-    // const script_w3 = document.createElement('script')
-    // script_w3.src = "https://www.w3schools.com/lib/w3.js"
-    // document.body.appendChild(script_w3)
-    // const script_w3_slideshow = document.createElement('script')
-    // script_w3_slideshow.innerText = 'w3.slideshow(".w3-image", 1500);'
-    // document.body.appendChild(script_w3_slideshow)
+    const script_w3 = document.createElement('script')
+    script_w3.src = "https://www.w3schools.com/lib/w3.js"
+    document.body.appendChild(script_w3)
     const script2 = document.createElement('script')
     script2.innerText = `
       new TradingView.ChatWidgetEmbed({
@@ -36,7 +33,12 @@ export default function Home() {
         "symbol": ""
     });
       `
-    setTimeout(() => { document.body.appendChild(script2) }, 1000)
+    setTimeout(() => {
+      document.body.appendChild(script2)
+      const script_w3_slideshow = document.createElement('script')
+      script_w3_slideshow.innerText = 'w3.slideshow(".w3-image", 2500);'
+      document.body.appendChild(script_w3_slideshow)
+    }, 1000)
     const script3 = document.createElement('script')
     script3.src = 'https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1'
     document.body.append(script3)
@@ -47,26 +49,22 @@ export default function Home() {
       <Head>
         <title>Home</title>
         <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-        <script src="https://www.w3schools.com/lib/w3.js"></script>
-          <script>
-          w3.slideshow(".w3-image", 2500);
-          </script>
       </Head>
       <div className="w3-content w3-section">
         <div className="w3-row w3-padding">
-          <img src="/images/uno.jpg" alt="img_la" className="w3-image" style={{width:'100%'}}/>
-          <img src="/images/due.jpg" alt="img_la" className="w3-image" style={{width:'100%'}} />
-          <img src="/images/tre.jpg" alt="img_la" className="w3-image" style={{width:'100%'}} />
-          <img src="/images/qua.jpg" alt="img_la" className="w3-image" style={{width:'100%'}} />
-          <img src="/images/cin.jpg" alt="img_la" className="w3-image" style={{width:'100%'}} />
-          <img src="/images/sei.jpg" alt="img_la" className="w3-image" style={{width:'100%'}} />
-          <img src="/images/ott.jpg" alt="img_la" className="w3-image" style={{width:'100%'}} />
+          <img src="/images/uno.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
+          <img src="/images/due.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
+          <img src="/images/tre.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
+          <img src="/images/qua.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
+          <img src="/images/cin.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
+          <img src="/images/sei.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
+          <img src="/images/ott.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
         </div>
         <div className="w3-row">
           <div className="w3-half">
             <div id="tv-chatwidget-f9499"></div>
             <div className="w3-padding">
-            <iframe src="https://hasindusithmin.github.io/forex-chart/" width={'100%'} height={'250px'} scrolling="no" frameBorder={"0"}></iframe>
+              <iframe src="https://hasindusithmin.github.io/forex-chart/" width={'100%'} height={'250px'} scrolling="no" frameBorder={"0"}></iframe>
             </div>
           </div>
           <div className="w3-half" id="tv-ideas-stream-e6c04"></div>
