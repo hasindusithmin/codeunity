@@ -6,9 +6,6 @@ export default function Home() {
     script_tv.src = "https://s3.tradingview.com/tv.js";
     script_tv.async = true;
     document.body.appendChild(script_tv)
-    const script_w3 = document.createElement('script')
-    script_w3.src = "https://www.w3schools.com/lib/w3.js"
-    document.body.appendChild(script_w3)
     const script2 = document.createElement('script')
     script2.innerText = `
       new TradingView.ChatWidgetEmbed({
@@ -35,9 +32,6 @@ export default function Home() {
       `
     setTimeout(() => {
       document.body.appendChild(script2)
-      const script_w3_slideshow = document.createElement('script')
-      script_w3_slideshow.innerText = 'w3.slideshow(".w3-image", 4000);'
-      document.body.appendChild(script_w3_slideshow)
     }, 1000)
     const script3 = document.createElement('script')
     script3.src = 'https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1'
@@ -52,13 +46,6 @@ export default function Home() {
       </Head>
       <div className="w3-content w3-section">
         <div className="w3-row w3-padding">
-          <img src="/images/uno.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
-          <img src="/images/due.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
-          <img src="/images/tre.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
-          <img src="/images/qua.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
-          <img src="/images/cin.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
-          <img src="/images/sei.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
-          <img src="/images/ott.jpg" alt="img_la" className="w3-image" style={{ width: '100%' }} />
         </div>
         <div className="w3-row">
           <div className="w3-half">
