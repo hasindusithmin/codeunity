@@ -71,7 +71,7 @@ export default function Home() {
             <div id="ec" className="w3-padding w3-hide-small">
               <div className="tradingview-widget-container">
                 <div className="tradingview-widget-container__widget"></div>
-                <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/economic-calendar/" target="_blank"><span className="blue-text">Economic Calendar</span></a> by TradingView</div>
+                <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/economic-calendar/" ><span className="blue-text">Economic Calendar</span></a> by TradingView</div>
               </div>
             </div>
             <div className="w3-padding">
