@@ -6,6 +6,11 @@ export default function Home() {
     script_tv.src = "https://s3.tradingview.com/tv.js";
     script_tv.async = true;
     document.body.appendChild(script_tv)
+    const script_ec = document.createElement('script');
+    script_ec.src = "https://s3.tradingview.com/external-embedding/embed-widget-events.js";
+    script_ec.async = true;
+    script_ec.innerText = '{ "colorTheme": "light", "isTransparent": false, "width": "450", "height": "585", "locale": "en", "importanceFilter": "-1,0,1" }'
+    document.getElementById('ec').appendChild(script_ec)
     const script_w3 = document.createElement('script')
     script_w3.src = "https://www.w3schools.com/lib/w3.js"
     document.body.appendChild(script_w3)
@@ -63,6 +68,12 @@ export default function Home() {
         <div className="w3-row">
           <div className="w3-half">
             <div id="tv-chatwidget-f9499"></div>
+            <div id="ec" className="w3-padding w3-hide-small">
+              <div className="tradingview-widget-container">
+                <div className="tradingview-widget-container__widget"></div>
+                <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/markets/currencies/economic-calendar/" rel="noopener" target="_blank"><span class="blue-text">Economic Calendar</span></a> by TradingView</div>
+              </div>
+            </div>
             <div className="w3-padding">
               <iframe src="https://hasindusithmin.github.io/forex-chart/" width={'100%'} height={'250px'} scrolling="no" frameBorder={"0"}></iframe>
             </div>
