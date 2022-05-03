@@ -17,30 +17,31 @@ export default function Trader() {
     }
   }
   useEffect(() => {
-    try {
-      const url = window.location.href;
-      const client = { "role": "trader" }
-      const details = url.split('?')[1]
-      const queries = details.split('&')
-      for (let query of queries) {
-        const key = query.split('=')[0]
-        const value = query.split('=')[1]
-        client[key] = value;
-      }
-      fetch('https://data.mongodb-api.com/app/application-0-nfogs/endpoint/adduser', {
-        method: 'POST', // *GET, POST, PUT, DELETE, etc.
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(client) // body data type must match "Content-Type" header
-      }).then(res => {
-        if (res.status === 200) window.location.href = `https://codeunity.netlify.app/trader`;
-      })
-    } catch (error) {
-      console.log({error:error.message});
-    }
+
     if (user) {
-      sessionStorage.setItem('uuid', user.id);
+      try {
+        const url = window.location.href;
+        const client = { "role": "trader", "user_id": user.id }
+        const details = url.split('?')[1]
+        const queries = details.split('&')
+        for (let query of queries) {
+          const key = query.split('=')[0]
+          const value = query.split('=')[1]
+          client[key] = value;
+        }
+        console.log(client);
+        fetch('https://data.mongodb-api.com/app/application-0-nfogs/endpoint/adduser', {
+          method: 'POST', // *GET, POST, PUT, DELETE, etc.
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(client) // body data type must match "Content-Type" header
+        }).then(res => {
+          if (res.status === 200) window.location.href = `https://codeunity.netlify.app/trader`;
+        })
+      } catch (error) {
+        console.log({ error: error.message });
+      }
       fetch(
         `https://data.mongodb-api.com/app/application-0-nfogs/endpoint/getuser?user_id=${user.id}`
       )
