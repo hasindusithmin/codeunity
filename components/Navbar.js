@@ -1,18 +1,25 @@
 import Link from "next/link";
 import Image from "next/image";
 import Head from "next/head";
-import { useContext } from "react";
+import { useContext,useEffect } from "react";
 import AuthContext from "../stores/authcontext";
 export default function Navbar() {
   const { user, login, logout } = useContext(AuthContext);
   function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
+    document.getElementById("mySidebar").style.display = "block";
+  }
 
+  function w3_close() {
+    document.getElementById("mySidebar").style.display = "none";
+  }
+
+  useEffect(()=>{
+    const script = document.createElement('script')
+    script.src = 'https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js'
+    script.async = true;
+    script.innerHTML = '{ "symbols": [ { "description": "GBP/USD", "proName": "FOREXCOM:GBPUSD" }, { "description": "USD/JPY", "proName": "OANDA:USDJPY" }, { "description": "AUD/USD", "proName": "FX:AUDUSD" }, { "description": "EUR/USD", "proName": "FOREXCOM:EURUSD" }, { "description": "GBP/JPY", "proName": "OANDA:GBPJPY" }, { "description": "USD/CAD", "proName": "FX:USDCAD" }, { "description": "EUR/JPY", "proName": "OANDA:EURJPY" }, { "description": "NZD/USD", "proName": "FX:NZDUSD" }, { "description": "CAD/JPY", "proName": "OANDA:CADJPY" }, { "description": "GBP/CHF", "proName": "FX:GBPCHF" } ], "showSymbolLogo": true, "colorTheme": "light", "isTransparent": true, "displayMode": "adaptive", "locale": "en" }'
+    document.getElementById('tape').appendChild(script);
+  },[])
 
   return (
     <>
@@ -28,7 +35,12 @@ function w3_close() {
       </Head>
 
       <div className="container">
-        <div className="w3-row w3-panel">
+        <div className="w3-row">
+          <div className="tradingview-widget-container" id="tape">
+            <div className="tradingview-widget-container__widget"></div>
+          </div>
+        </div>
+        <div className="w3-row">
           <h1 className="w3-wide w3-center w3-threequarter w3-cursive">
             <b>Unity Trade Plus</b>
           </h1>
@@ -87,7 +99,7 @@ function w3_close() {
                       <a>Trader</a>
                     </Link>
                   </div>
-                  <div  className="w3-bar-item w3-button">
+                  <div className="w3-bar-item w3-button">
                     <Link href="/advisor">
                       <a>Advisor</a>
                     </Link>
@@ -104,7 +116,7 @@ function w3_close() {
                       <a>About Us</a>
                     </Link>
                   </div>
-                  <div  className="w3-bar-item w3-button">
+                  <div className="w3-bar-item w3-button">
                     <Link href="/performance">
                       <a>Performance</a>
                     </Link>
@@ -144,60 +156,60 @@ function w3_close() {
           <div className="w3-button w3-padding-16 w3-left" onClick={w3_open}>☰</div>
           <span className="w3-large w3-wide">Hello Forex Traders</span>
         </div>
-        <nav className="w3-sidebar w3-bar-block w3-card w3-top w3-animate-left w3-hide-large" style={{display:"none",zIndex:2,width:'40%',maxWidth:'300px'}} id="mySidebar">  
-        <div onClick={w3_close} className="w3-bar-item w3-button">Close Menu</div>
-        <div onClick={w3_close} className="w3-bar-item w3-button">
-          <Link href="/">
-                <a>Home</a>
-          </Link>
-        </div>
-        <div onClick={w3_close} className="w3-bar-item w3-button">
-          <Link href="/chart">
-                <a>Chart</a>
-          </Link>
-        </div>
-        <div onClick={w3_close} className="w3-bar-item w3-button">
-          <Link href="/performance">
-                  <a>Performance</a>
-          </Link>
-        </div>
-        <div onClick={w3_close} className="w3-bar-item w3-button">
-          <Link href="/contactus">
-                  <a>Contact Us</a>
-          </Link>
-        </div>
-        {user && (
-              <>
-                <div onClick={w3_close} className="w3-bar-item w3-button">
+        <nav className="w3-sidebar w3-bar-block w3-card w3-top w3-animate-left w3-hide-large" style={{ display: "none", zIndex: 2, width: '40%', maxWidth: '300px' }} id="mySidebar">
+          <div onClick={w3_close} className="w3-bar-item w3-button">Close Menu</div>
+          <div onClick={w3_close} className="w3-bar-item w3-button">
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </div>
+          <div onClick={w3_close} className="w3-bar-item w3-button">
+            <Link href="/chart">
+              <a>Chart</a>
+            </Link>
+          </div>
+          <div onClick={w3_close} className="w3-bar-item w3-button">
+            <Link href="/performance">
+              <a>Performance</a>
+            </Link>
+          </div>
+          <div onClick={w3_close} className="w3-bar-item w3-button">
+            <Link href="/contactus">
+              <a>Contact Us</a>
+            </Link>
+          </div>
+          {user && (
+            <>
+              <div onClick={w3_close} className="w3-bar-item w3-button">
                 <Link href="/trader">
-                      <a>Trader</a>
+                  <a>Trader</a>
                 </Link>
               </div>
               <div onClick={w3_close} className="w3-bar-item w3-button">
                 <Link href="/advisor">
-                      <a>Advisor</a>
+                  <a>Advisor</a>
                 </Link>
               </div>
-              </>
-        )}
-        {user && (
-              <div onClick={w3_close} className="w3-bar-item w3-button">
-                <Link href="/account">
-                  <a>Account</a>
-                </Link>
-              </div>
-            )}
-            {!user && (
-              <div onClick={login} className="w3-bar-item w3-button">
-                Login/Signup
-              </div>
-            )}
-            {user && (
-              <div onClick={logout} className="w3-bar-item w3-button">
-                Logout
-              </div>
-            )}
-      </nav>
+            </>
+          )}
+          {user && (
+            <div onClick={w3_close} className="w3-bar-item w3-button">
+              <Link href="/account">
+                <a>Account</a>
+              </Link>
+            </div>
+          )}
+          {!user && (
+            <div onClick={login} className="w3-bar-item w3-button">
+              Login/Signup
+            </div>
+          )}
+          {user && (
+            <div onClick={logout} className="w3-bar-item w3-button">
+              Logout
+            </div>
+          )}
+        </nav>
       </div>
     </>
   );
