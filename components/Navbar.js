@@ -59,8 +59,8 @@ function w3_close() {
             </li>
             {!user && (
               <li className="w3-btn w3-round">
-                <Link href="/aboutus">
-                  <a>About Us</a>
+                <Link href="/chart">
+                  <a>Chart</a>
                 </Link>
               </li>
             )}
@@ -152,8 +152,8 @@ function w3_close() {
           </Link>
         </div>
         <div onClick={w3_close} className="w3-bar-item w3-button">
-          <Link href="/aboutus">
-                <a>About Us</a>
+          <Link href="/chart">
+                <a>Chart</a>
           </Link>
         </div>
         <div onClick={w3_close} className="w3-bar-item w3-button">
