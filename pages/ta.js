@@ -40,7 +40,7 @@ export default function Ta() {
                 <title>Technical Analysis</title>
                 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
             </Head>
-            <div id="root"></div>
+            <div id="root" className="w3-content w3-section"></div>
 
         </>
     )
