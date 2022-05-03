@@ -153,7 +153,7 @@ export default function Navbar() {
           </ul>
         </nav>
         <div className="w3-hide-large">
-          <div className="w3-button w3-padding-16 w3-left" onClick={w3_open}>☰</div>
+          <span className="w3-button w3-left" onClick={w3_open}>☰</span>
           <span className="w3-large w3-wide">Hello Forex Traders</span>
         </div>
         <nav className="w3-sidebar w3-bar-block w3-card w3-top w3-animate-left w3-hide-large" style={{ display: "none", zIndex: 2, width: '40%', maxWidth: '300px' }} id="mySidebar">

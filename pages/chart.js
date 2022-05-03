@@ -14,7 +14,7 @@ export default function Chart() {
     }, [])
     return (
         <div className="w3-content w3-section">
-            <div className="tradingview-widget-container" id="root">
+            <div className="tradingview-widget-container w3-margin-top" id="root">
                 <div id="tradingview_b9b10"></div>
                 <div className="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/EURUSD/?exchange=FX"><span className="blue-text">EURUSD Chart</span></a> by TradingView</div>
             </div>
