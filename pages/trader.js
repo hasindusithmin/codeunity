@@ -14,7 +14,18 @@ export default function Trader() {
         [Link](https://t.me/+EwVE3mvUXeAyMGNl)
       `
       fetch(
-        `https://api.telegram.org/${process.env.NEXT_PUBLIC_TOKEN}/sendPhoto?chat_id=${usr.chat_id}&photo=${url}&caption=${cap}&parse_mode=markdown`
+        `https://api.telegram.org/${process.env.NEXT_PUBLIC_TOKEN}/sendPhoto?chat_id=${usr.chat_id}`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            photo: url,
+            caption: cap,
+            parse_mode: 'markdown'
+          })
+        }
       )
         .then(res => {
           if (res.status === 200) setIsSend(true)
