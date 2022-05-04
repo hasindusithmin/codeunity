@@ -8,8 +8,13 @@ export default function Trader() {
   const { user } = useContext(AuthContext);
   const sendMessage = () => {
     if (!isSend) {
+      const url = 'https://i.ibb.co/X2zfL3s/tre.jpg'
+      const cap = `
+        *Hi Trader,Join Group Chat*
+        [Link](https://t.me/+EwVE3mvUXeAyMGNl)
+      `
       fetch(
-        `https://api.telegram.org/${process.env.NEXT_PUBLIC_TOKEN}/sendMessage?chat_id=${usr.chat_id}&text=Hello World`
+        `https://api.telegram.org/${process.env.NEXT_PUBLIC_TOKEN}/sendPhoto?chat_id=${usr.chat_id}&photo=${url}&caption=${cap}&parse_mode=markdown`
       )
         .then(res => {
           if (res.status === 200) setIsSend(true)
